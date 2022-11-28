@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Swapno_Samity</string>
+    <string name="email">Email</string>
+    <string name="forget_password">Forget Password</string>
+    <string name="login">Login</string>
+    <string name="registration">Registration</string>
+    <string name="password">Password</string>
+    <string name="appName">Welcome To\nSwapno Samity</string>
+    <string name="member_registration_from">Member Registration From</string>
+    <string name="Subtitle">Please register member document to continue with the amazing experience!</string>
+    <string name="full_name">Full Name*</string>
+    <string name="date_of_birth_dd_mm_yyyy">Date of Birth (dd/mm/yyyy)*</string>
+    <string name="enter_member_full_name">Enter Member full name</string>
+    <string name="select_member_dob">Select Member Dob</string>
+    <string name="enter_member_mobile_no_without_91">Enter Member Mobile no. (without +91)</string>
+    <string name="address">Address*</string>
+    <string name="enter_member_address">Enter Member Address</string>
+    <string name="memberregistration">Registration</string>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="hederSize">16sp</dimen>
+    <dimen name="Heder_Size">16sp</dimen>
+    <dimen name="reg_text_header_size">16sp</dimen>
+    <dimen name="view_margin_left">60dp</dimen>
+</resources>
