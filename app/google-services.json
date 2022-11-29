@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "182091371583",
+    "project_id": "swapno-samity",
+    "storage_bucket": "swapno-samity.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:182091371583:android:0527917f95b0e5ea01d48a",
+        "android_client_info": {
+          "package_name": "com.example.swapno_samity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "182091371583-sgnlfe9mv9vba1etugqnuie674q1rfg8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAG2RTpafWwpvVIUpb7SmwK57f7bbr3COU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "182091371583-sgnlfe9mv9vba1etugqnuie674q1rfg8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

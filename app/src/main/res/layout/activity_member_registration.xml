@@ -189,20 +189,19 @@
 
                 <EditText
                     android:id="@+id/editText_register_dob"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="179dp"
+                    android:layout_height="52dp"
                     android:layout_below="@id/textView_register_dob"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
                     android:layout_toEndOf="@id/imageViewDoB"
                     android:background="@android:color/transparent"
                     android:hint="@string/select_member_dob"
-                    android:inputType="date"
+                    android:importantForAutofill="no"
                     android:minHeight="48dp"
                     android:padding="6dp"
                     android:textColorHint="#212121"
-                    android:textSize="@dimen/reg_text_header_size"
-                    android:importantForAutofill="no" />
+                    android:textSize="@dimen/reg_text_header_size" />
 
                 <ImageView
                     android:id="@+id/imageView_date_picker"
@@ -326,7 +325,6 @@
                     android:layout_toEndOf="@id/imageViewMobile"
                     android:background="@android:color/transparent"
                     android:hint="@string/enter_member_mobile_no_without_91"
-                    android:inputType="phone"
                     android:minHeight="48dp"
                     android:padding="6dp"
                     android:textColorHint="#212121"
@@ -380,7 +378,6 @@
                     android:autofillHints=""
                     android:background="@android:color/transparent"
                     android:hint="@string/enter_member_address"
-                    android:inputType="textPostalAddress"
                     android:minHeight="48dp"
                     android:padding="6dp"
                     android:textColorHint="#212121"
@@ -434,13 +431,11 @@
                     android:autofillHints=""
                     android:background="@android:color/transparent"
                     android:hint="Enter Member Id Card"
-                    android:inputType="number"
                     android:minHeight="48dp"
                     android:padding="6dp"
                     android:textColorHint="#212121"
                     android:textSize="@dimen/reg_text_header_size"
                     tools:ignore="TouchTargetSizeCheck" />
-
             </RelativeLayout>
 
             <RelativeLayout
@@ -489,13 +484,11 @@
                     android:autofillHints=""
                     android:background="@android:color/transparent"
                     android:hint="Enter Member Pen Card"
-                    android:inputType="number"
                     android:minHeight="48dp"
                     android:padding="6dp"
                     android:textColorHint="#212121"
                     android:textSize="@dimen/reg_text_header_size"
                     tools:ignore="TouchTargetSizeCheck" />
-
             </RelativeLayout>
 
             <RelativeLayout
@@ -544,13 +537,11 @@
                     android:autofillHints=""
                     android:background="@android:color/transparent"
                     android:hint="Enter Member Adar Card"
-                    android:inputType="number"
                     android:minHeight="48dp"
                     android:padding="6dp"
                     android:textColorHint="#212121"
                     android:textSize="@dimen/reg_text_header_size"
                     tools:ignore="TouchTargetSizeCheck" />
-
             </RelativeLayout>
 
             <RelativeLayout
@@ -599,101 +590,65 @@
                     android:autofillHints=""
                     android:background="@android:color/transparent"
                     android:hint="Enter Member Amount Of Loan"
-                    android:inputType="number"
                     android:minHeight="48dp"
                     android:padding="6dp"
                     android:textColorHint="#212121"
                     android:textSize="@dimen/reg_text_header_size"
                     tools:ignore="TouchTargetSizeCheck" />
-
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/RL_interest"
+                android:id="@+id/RL_interestOfLoan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:background="@color/pink">
 
                 <ImageView
-                    android:id="@+id/imageViewInterest"
+                    android:id="@+id/imageView_interestOfLoan"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:src="@drawable/ic_gender" />
+                    android:src="@drawable/icon_monney" />
 
                 <TextView
-                    android:id="@+id/textView_register_interest"
+                    android:id="@+id/textView_register_interestOfLoan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_toEndOf="@id/imageViewInterest"
+                    android:layout_toEndOf="@id/imageView_interestOfLoan"
                     android:padding="6dp"
-                    android:text="Interest*"
+                    android:text="Interest Amount Of Loan(E.X 25%)*"
                     android:textColor="@color/white"
                     android:textSize="@dimen/reg_text_header_size"
                     android:textStyle="bold" />
 
                 <View
-                    android:id="@+id/divider_interest"
+                    android:id="@+id/divider_interestOfLoan"
                     android:layout_width="250dp"
                     android:layout_height="1dp"
-                    android:layout_below="@id/textView_register_interest"
+                    android:layout_below="@id/textView_register_interestOfLoan"
                     android:layout_marginStart="@dimen/view_margin_left"
                     android:background="@android:color/darker_gray" />
 
-                <RadioGroup
-                    android:id="@+id/radio_group_register_interest"
+                <EditText
+                    android:id="@+id/editText_register_interestOfLoan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/textView_register_interest"
-                    android:layout_toEndOf="@id/imageViewInterest"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/radio_interest_25"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:buttonTint="@color/black"
-                        android:text="25%"
-                        android:textColor="#212121"
-                        android:textSize="16sp" />
-
-                    <RadioButton
-                        android:id="@+id/radio_interest_30"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:buttonTint="@color/black"
-                        android:text="30%"
-                        android:textColor="#212121"
-                        android:textSize="16sp" />
-
-                    <RadioButton
-                        android:id="@+id/radio_interest_35"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:buttonTint="@color/black"
-                        android:text="35%"
-                        android:textColor="#212121"
-                        android:textSize="16sp" />
-
-                </RadioGroup>
+                    android:layout_below="@id/textView_register_interestOfLoan"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@id/imageView_interestOfLoan"
+                    android:autofillHints=""
+                    android:background="@android:color/transparent"
+                    android:hint="Enter Member Interest Of Loan"
+                    android:minHeight="48dp"
+                    android:padding="6dp"
+                    android:textColorHint="#212121"
+                    android:textSize="@dimen/reg_text_header_size"
+                    tools:ignore="TouchTargetSizeCheck" />
             </RelativeLayout>
-
-
-            <CheckBox
-                android:id="@+id/checkBox_terms_conditions"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:buttonTint="@color/purple_500"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
-                android:text="I agree with the Terms of Service and Privacy Policy"
-                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/button_register"
@@ -701,7 +656,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="10dp"
-                android:text="@string/memberregistration" />
+                android:text="@string/memberregistration"
+                android:onClick="registerMember"/>
 
 
         </LinearLayout>
