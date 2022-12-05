@@ -39,6 +39,8 @@ public class MemberRegistration extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance();
         rootReference = firebaseDatabase.getReference();
         memberReference = rootReference.child("Member Register Activity");
+        
+        Toast.makeText(MemberRegistration.this, "Enter the Value", Toast.LENGTH_SHORT).show();
 
         //Toast.makeText(this, "You Can Member Registration Now ", Toast.LENGTH_SHORT).show();
         etName = findViewById(R.id.editText_register_full_name);
