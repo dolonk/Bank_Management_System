@@ -58,10 +58,6 @@ public class MemberRegistration extends AppCompatActivity {
 
     public void registerMember(View view) {
 
-
-
-
-        // obtain the entered data
         String textName = etName.getText().toString();
         String textEmail = etEmail.getText().toString();
         String textDob = etDob.getText().toString();
