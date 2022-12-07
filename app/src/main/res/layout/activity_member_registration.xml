@@ -58,8 +58,8 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:src="@drawable/ic_profile"
-                    android:contentDescription="TODO" />
+                    android:contentDescription="TODO"
+                    android:src="@drawable/ic_profile" />
 
                 <TextView
                     android:id="@+id/textView_register_full_name"
@@ -89,14 +89,14 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
                     android:layout_toEndOf="@id/imageViewName"
+                    android:autofillHints=""
                     android:background="@android:color/transparent"
                     android:hint="@string/enter_member_full_name"
                     android:inputType="textPersonName"
                     android:minHeight="48dp"
                     android:padding="6dp"
                     android:textColorHint="#212121"
-                    android:textSize="@dimen/reg_text_header_size"
-                    android:autofillHints="" />
+                    android:textSize="@dimen/reg_text_header_size" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -142,14 +142,14 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
                     android:layout_toEndOf="@id/imageViewEmail"
+                    android:autofillHints=""
                     android:background="@android:color/transparent"
                     android:hint="Enter Member email address"
                     android:inputType="textEmailAddress"
                     android:minHeight="48dp"
                     android:padding="6dp"
                     android:textColorHint="#212121"
-                    android:textSize="@dimen/reg_text_header_size"
-                    android:autofillHints="" />
+                    android:textSize="@dimen/reg_text_header_size" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -212,7 +212,9 @@
                     android:layout_marginBottom="10dp"
                     android:layout_toEndOf="@id/editText_register_dob"
                     android:src="@drawable/ic_calendar"
-                    tools:ignore="ImageContrastCheck" />
+                    tools:ignore="ImageContrastCheck"
+                    android:focusable="false"
+                    android:onClick="datePicker"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -325,11 +327,11 @@
                     android:layout_toEndOf="@id/imageViewMobile"
                     android:background="@android:color/transparent"
                     android:hint="@string/enter_member_mobile_no_without_91"
+                    android:importantForAutofill="no"
                     android:minHeight="48dp"
                     android:padding="6dp"
                     android:textColorHint="#212121"
-                    android:textSize="@dimen/reg_text_header_size"
-                    android:importantForAutofill="no" />
+                    android:textSize="@dimen/reg_text_header_size" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -656,8 +658,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="10dp"
-                android:text="@string/memberregistration"
-                android:onClick="registerMember"/>
+                android:text="@string/memberregistration" />
 
 
         </LinearLayout>
