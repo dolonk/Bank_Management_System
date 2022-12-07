@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -21,11 +22,14 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class MemberRegistration extends AppCompatActivity {
 
-    private EditText etName, etEmail, etDob, etPhoneNumber, etAddress, etIdCard, etPenCard, etAdarCard, etAmountOfLoan, etInterestOfAmount;
+    private EditText etName, etEmail, etDob, etPhoneNumber, etAddress, etIdCard, etPenCard, etAdarCard, etAmountOfLoan, etInterest, etCurrentDate;
     private RadioGroup radioGroupGender;
     private RadioButton etGender;
 
@@ -33,6 +37,7 @@ public class MemberRegistration extends AppCompatActivity {
     public DatabaseReference rootReference;
     public DatabaseReference memberReference;
     String memberId;
+    String currentDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +54,7 @@ public class MemberRegistration extends AppCompatActivity {
         etPenCard = findViewById(R.id.editText_register_PenCard);
         etAdarCard = findViewById(R.id.editText_register_AdarCard);
         etAmountOfLoan = findViewById(R.id.editText_register_AmountOfLoan);
-        etInterestOfAmount = findViewById(R.id.editText_register_interestOfLoan);
+        etInterest = findViewById(R.id.editText_register_interestOfLoan);
         radioGroupGender = findViewById(R.id.radio_group_register_gender);
         radioGroupGender.clearCheck();
         radioGroupGender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -73,8 +78,19 @@ public class MemberRegistration extends AppCompatActivity {
                 String textPenCard = etPenCard.getText().toString();
                 String textAdarCard = etAdarCard.getText().toString();
                 String textAmount = etAmountOfLoan.getText().toString();
-                String textInterest = etInterestOfAmount.getText().toString();
+                String textInterest = etInterest.getText().toString();
                 String textGender = etGender.getText().toString();
+
+                // validation Mobile number using Matcher and pattern(regular expression)
+                String mobileRegex = "[6-9][0-9]{9}";
+                Matcher mobileMatcher;
+                Pattern mobilePattern = Pattern.compile(mobileRegex);
+                mobileMatcher = mobilePattern.matcher(textPhoneNumber);
+
+                //Current Date pick
+                Calendar calendar = Calendar.getInstance();
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy ");
+                currentDate = simpleDateFormat.format(calendar.getTime());
 
                 if (TextUtils.isEmpty(textName)) {
                     Toast.makeText(MemberRegistration.this, "Please Enter Your Full Name", Toast.LENGTH_SHORT).show();
@@ -100,6 +116,10 @@ public class MemberRegistration extends AppCompatActivity {
                     Toast.makeText(MemberRegistration.this, "Please Enter The Phone Number", Toast.LENGTH_SHORT).show();
                     etPhoneNumber.setError("Phone Number Required");
                     etPhoneNumber.requestFocus();
+                } else if (!mobileMatcher.find()) {
+                    Toast.makeText(MemberRegistration.this, "Please Enter The Phone Number", Toast.LENGTH_SHORT).show();
+                    etPhoneNumber.setError("Phone Number is not valid");
+                    etPhoneNumber.requestFocus();
                 }
                 if (textPhoneNumber.length() != 10) {
                     Toast.makeText(MemberRegistration.this, "Please Re-Enter The Phone Number", Toast.LENGTH_SHORT).show();
@@ -112,7 +132,7 @@ public class MemberRegistration extends AppCompatActivity {
                     etAdarCard.requestFocus();
 
                 } else {
-                    registerMemberUser(textName, textEmail, textDob, textGender, textAdress, textPhoneNumber, textIdCard, textPenCard, textAdarCard, textAmount, textInterest);
+                    registerMemberUser(textName, textEmail, textDob, textGender, textAdress, textPhoneNumber, textIdCard, textPenCard, textAdarCard, textAmount, textInterest, currentDate);
 
                 }
 
@@ -134,14 +154,14 @@ public class MemberRegistration extends AppCompatActivity {
         pickerDialog.show();
     }
 
-    public void registerMemberUser(String textName, String textEmail, String textDob, String textGender, String textAdress, String textPhoneNumber, String textIdCard, String textPenCard, String textAdarCard, String textAmount, String textInterest) {
+    public void registerMemberUser(String textName, String textEmail, String textDob, String textGender, String textAdress, String textPhoneNumber, String textIdCard, String textPenCard, String textAdarCard, String textAmount, String textInterest, String currentDate) {
 
 //      Data connection with realtime database
         firebaseDatabase = FirebaseDatabase.getInstance();
         rootReference = firebaseDatabase.getReference();
         memberReference = rootReference.child("Member Register Activity");
         memberId = memberReference.push().getKey();
-        ReadWriteDetails readWriteDetails = new ReadWriteDetails(memberId, textName, textEmail, textDob, textGender, textAdress, textPhoneNumber, textIdCard, textPenCard, textAdarCard, textAmount, textInterest);
+        ReadWriteDetails readWriteDetails = new ReadWriteDetails(memberId, textName, textEmail, textDob, textGender, textAdress, textPhoneNumber, textIdCard, textPenCard, textAdarCard, textAmount, textInterest, currentDate);
         memberReference.child(memberId).setValue(readWriteDetails).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
