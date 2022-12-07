@@ -1,14 +1,14 @@
 package com.example.swapno_samity;
 
 public class ReadWriteDetails {
-    private String id, name, email, dob, address, phoneNumber, idCard, penCard , adarCard, amount, interest;// gender;
+    private String id, name, email, dob, gender, address, phoneNumber, idCard, penCard, adarCard, amount, interest;
 
-    public ReadWriteDetails(String id, String name, String email, String dob, String address, String phoneNumber, String idCard, String penCard, String adarCard, String amount, String interest) {
+    public ReadWriteDetails(String id, String name, String email, String dob, String gender, String address, String phoneNumber, String idCard, String penCard, String adarCard, String amount, String interest) {
         this.id = id;
         this.name = name;
         this.dob = dob;
         this.email = email;
-        //this.gender = gender;
+        this.gender = gender;
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.idCard = idCard;
@@ -50,13 +50,13 @@ public class ReadWriteDetails {
         this.dob = dob;
     }
 
-//    public String getGender() {
-//        return gender;
-//    }
-//
-//    public void setGender(String gender) {
-//        this.gender = gender;
-//    }
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
     public String getAddress() {
         return address;
