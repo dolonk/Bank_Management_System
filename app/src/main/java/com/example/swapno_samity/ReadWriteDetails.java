@@ -2,8 +2,9 @@ package com.example.swapno_samity;
 
 public class ReadWriteDetails {
     private String id, name, email, dob, gender, address, phoneNumber, idCard, penCard, adarCard, amount, interest;
+    private String current_Date_Pick;
 
-    public ReadWriteDetails(String id, String name, String email, String dob, String gender, String address, String phoneNumber, String idCard, String penCard, String adarCard, String amount, String interest) {
+    public ReadWriteDetails(String id, String name, String email, String dob, String gender, String address, String phoneNumber, String idCard, String penCard, String adarCard, String amount, String interest, String current_Date_Pick) {
         this.id = id;
         this.name = name;
         this.dob = dob;
@@ -16,6 +17,7 @@ public class ReadWriteDetails {
         this.adarCard = adarCard;
         this.amount = amount;
         this.interest = interest;
+        this.current_Date_Pick = current_Date_Pick;
     }
 
     public String getId() {
@@ -111,6 +113,14 @@ public class ReadWriteDetails {
     }
 
     public void setInterest(String interest) {
-        this.adarCard = interest;
+        this.interest = interest;
+    }
+
+    public String getCurrent_Date_Pick() {
+        return current_Date_Pick;
+    }
+
+    public void setCurrent_Date_Pick(String current_Date_Pick) {
+        this.current_Date_Pick = current_Date_Pick;
     }
 }
