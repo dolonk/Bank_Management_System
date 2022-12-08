@@ -20,6 +20,7 @@
             android:layout_marginLeft="35dp"
             android:layout_marginRight="35dp"
             android:text="Member Registration"
+            android:onClick="MemberRegistration"
             android:textAllCaps="false"
             android:textSize="18sp" />
     </LinearLayout>

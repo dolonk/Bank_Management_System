@@ -16,4 +16,5 @@
     <string name="address">Address*</string>
     <string name="enter_member_address">Enter Member Address</string>
     <string name="memberregistration">Registration</string>
+    <string name="member_list">Member List</string>
 </resources>

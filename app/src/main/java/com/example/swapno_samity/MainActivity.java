@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
     }
 
+
+
     public void membersEntry(View view) {
         Intent intent = new Intent(getApplicationContext(), Members.class);
         startActivity(intent);
@@ -44,6 +46,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void serviceCharge(View view) {
         Intent intent = new Intent(getApplicationContext(), ServiceCharge.class);
+        startActivity(intent);
+    }
+
+    public void MemberRegistration(View view) {
+        Intent intent = new Intent(getApplicationContext(), MemberRegistration.class);
         startActivity(intent);
     }
 }
