@@ -52,7 +52,7 @@ public class MemberListViewAdapter extends RecyclerView.Adapter<MemberListViewAd
                 intent.putExtra("GENDER", memberListModel.getGender());
                 intent.putExtra("ADDRESS", memberListModel.getAddress());
                 intent.putExtra("PHONE_NUMBER", memberListModel.getPhoneNumber());
-                intent.putExtra("IDC_ARD", memberListModel.getIdCard());
+                intent.putExtra("ID_CARD", memberListModel.getIdCard());
                 intent.putExtra("PEN_CARD", memberListModel.getPenCard());
                 intent.putExtra("ADAR_CARD", memberListModel.getAdarCard());
                 intent.putExtra("AMOUNT", memberListModel.getAmount());
