@@ -4,6 +4,9 @@ public class ReadWriteDetails {
     private String id, name, email, dob, gender, address, phoneNumber, idCard, penCard, adarCard, amount, interest;
     private String current_Date_Pick;
 
+    public ReadWriteDetails() {
+    }
+
     public ReadWriteDetails(String id, String name, String email, String dob, String gender, String address, String phoneNumber, String idCard, String penCard, String adarCard, String amount, String interest, String current_Date_Pick) {
         this.id = id;
         this.name = name;

@@ -20,7 +20,7 @@ public class Members extends AppCompatActivity {
 
     private RecyclerView memberRecyclerView;
     MemberListViewAdapter memberListViewAdapter;
-    ArrayList<MemberListModel> memberList;
+    ArrayList<ReadWriteDetails> memberList;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
 
@@ -45,7 +45,7 @@ public class Members extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                    MemberListModel memberListModel = dataSnapshot.getValue(MemberListModel.class);
+                    ReadWriteDetails memberListModel = dataSnapshot.getValue(ReadWriteDetails.class);
                     memberList.add(memberListModel);
                     Toast.makeText(Members.this, "Successfully", Toast.LENGTH_SHORT).show();
                 }
